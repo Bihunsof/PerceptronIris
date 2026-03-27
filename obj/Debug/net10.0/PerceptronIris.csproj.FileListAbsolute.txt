@@ -1,0 +1,16 @@
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/Data/iris.csv
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/PerceptronIris
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/PerceptronIris.deps.json
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/PerceptronIris.runtimeconfig.json
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/PerceptronIris.dll
+/Users/bihunsof/PerceptronIris/bin/Debug/net10.0/PerceptronIris.pdb
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.AssemblyInfoInputs.cache
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.AssemblyInfo.cs
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.csproj.CoreCompileInputs.cache
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.sourcelink.json
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.dll
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/refint/PerceptronIris.dll
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.pdb
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/PerceptronIris.genruntimeconfig.cache
+/Users/bihunsof/PerceptronIris/obj/Debug/net10.0/ref/PerceptronIris.dll
