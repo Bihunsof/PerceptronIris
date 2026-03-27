@@ -33,7 +33,7 @@ public sealed class IrisCsvLoader
                 continue;
 
             if (!double.TryParse(parts[0], NumberStyles.Float, CultureInfo.InvariantCulture, out double sepalLength))
-                continue;
+                continue; // np. nagłówek
 
             double sepalWidth = ParseDouble(parts[1]);
             double petalLength = ParseDouble(parts[2]);
@@ -43,7 +43,7 @@ public sealed class IrisCsvLoader
             int? label = MapLabel(species);
 
             if (!label.HasValue)
-                continue;
+                continue; // ignorujemy virginica
 
             double[] allFeatures = { sepalLength, sepalWidth, petalLength, petalWidth };
             double[] selectedFeatures = featureIndexes.Select(index => allFeatures[index]).ToArray();

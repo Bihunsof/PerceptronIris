@@ -6,48 +6,62 @@ namespace PerceptronIris.UI;
 public sealed class ConsolePredictionUi
 {
     private readonly Perceptron _model;
+    private readonly string[] _featureNames;
+    private readonly string _positiveClassName;
+    private readonly string _negativeClassName;
 
-    public ConsolePredictionUi(Perceptron model)
+    public ConsolePredictionUi(
+        Perceptron model,
+        IReadOnlyList<string> featureNames,
+        string positiveClassName,
+        string negativeClassName)
     {
-        _model = model;
+        _model = model ?? throw new ArgumentNullException(nameof(model));
+        _positiveClassName = positiveClassName ?? throw new ArgumentNullException(nameof(positiveClassName));
+        _negativeClassName = negativeClassName ?? throw new ArgumentNullException(nameof(negativeClassName));
+
+        if (featureNames == null || featureNames.Count == 0)
+            throw new ArgumentException("Lista nazw cech nie może być pusta.", nameof(featureNames));
+
+        if (featureNames.Count != model.Dimension)
+            throw new ArgumentException("Liczba nazw cech musi być zgodna z dimension perceptronu.", nameof(featureNames));
+
+        _featureNames = featureNames.ToArray();
     }
 
     public void Run()
     {
         Console.WriteLine("=== Tryb predykcji użytkownika ===");
-        Console.WriteLine("Podawaj 2 cechy w tej kolejności:");
-        Console.WriteLine("1. petal length");
-        Console.WriteLine("2. petal width");
-        Console.WriteLine("Wpisz q aby zakończyć.");
+        Console.WriteLine($"Model oczekuje {_model.Dimension} cech.");
+        Console.WriteLine("Wpisz q w dowolnym momencie, aby zakończyć.");
         Console.WriteLine();
 
         while (true)
         {
-            Console.Write("Petal length (q = koniec): ");
-            string? first = Console.ReadLine();
+            double[] input = new double[_model.Dimension];
 
-            if (string.Equals(first, "q", StringComparison.OrdinalIgnoreCase))
-                break;
-
-            if (!TryParseNumber(first, out double petalLength))
+            for (int i = 0; i < _model.Dimension; i++)
             {
-                Console.WriteLine("Błędna liczba.");
-                Console.WriteLine();
-                continue;
+                while (true)
+                {
+                    Console.Write($"{_featureNames[i]} (q = koniec): ");
+                    string? text = Console.ReadLine();
+
+                    if (string.Equals(text, "q", StringComparison.OrdinalIgnoreCase))
+                        return;
+
+                    if (TryParseNumber(text, out double value))
+                    {
+                        input[i] = value;
+                        break;
+                    }
+
+                    Console.WriteLine("Błędna liczba. Spróbuj ponownie.");
+                }
             }
 
-            Console.Write("Petal width: ");
-            string? second = Console.ReadLine();
-
-            if (!TryParseNumber(second, out double petalWidth))
-            {
-                Console.WriteLine("Błędna liczba.");
-                Console.WriteLine();
-                continue;
-            }
-
-            int prediction = _model.Predict(new[] { petalLength, petalWidth });
-            string species = prediction == 1 ? "setosa" : "versicolor";
+            int prediction = _model.Predict(input);
+            string species = prediction == 1 ? _positiveClassName : _negativeClassName;
 
             Console.WriteLine($"Predykcja: {species} ({prediction})");
             Console.WriteLine();

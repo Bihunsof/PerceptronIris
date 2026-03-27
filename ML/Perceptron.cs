@@ -59,21 +59,22 @@ public sealed class Perceptron
                 int predicted = Predict(inputs[sampleIndex]);
                 int error = labels[sampleIndex] - predicted;
 
-                if (error == 0)
-                    continue;
-
-                errors++;
-
-                for (int featureIndex = 0; featureIndex < Dimension; featureIndex++)
+                if (error != 0)
                 {
-                    Weights[featureIndex] += Alpha * error * inputs[sampleIndex][featureIndex];
-                }
+                    errors++;
 
-                //treshold - (w*x)
-                Threshold -= Beta * error;
+                    for (int featureIndex = 0; featureIndex < Dimension; featureIndex++)
+                    {
+                        Weights[featureIndex] += Alpha * error * inputs[sampleIndex][featureIndex];
+                    }
+
+                    Threshold -= Beta * error;
+                }
             }
 
-            AccuracyHistory.Add(CalculateAccuracy(inputs, labels));
+            double passAccuracy = (inputs.Length - errors) / (double)inputs.Length;
+
+            AccuracyHistory.Add(passAccuracy);
             ErrorHistory.Add(errors);
             EpochsCompleted = epoch;
 
@@ -81,7 +82,7 @@ public sealed class Perceptron
                 break;
         }
     }
-    
+
     public void train(double[][] inputs, int[] labels, double alpha, double beta, int maxEpochs = 1000)
     {
         Train(inputs, labels, alpha, beta, maxEpochs);
@@ -106,7 +107,7 @@ public sealed class Perceptron
 
         return activation >= 0.0 ? 1 : 0;
     }
-    
+
     public int predict(double[] inputs)
     {
         return Predict(inputs);

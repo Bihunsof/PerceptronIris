@@ -14,57 +14,82 @@ internal static class Program
         string outputDirectory = Path.Combine(AppContext.BaseDirectory, "output");
 
         var loader = new IrisCsvLoader();
-
-        // 2 -> petal length
-        // 3 -> petal width
-        var dataset = loader.Load(dataPath, 2, 3);
-
         var splitter = new PrepareDataset();
-        var split = splitter.TrainTestSplit(dataset, trainRatio: 0.7, seed: 42);
-
-        double[][] trainInputs = split.Training.Select(item => item.Features).ToArray();
-        int[] trainLabels = split.Training.Select(item => item.Label).ToArray();
-
-        double[][] testInputs = split.Test.Select(item => item.Features).ToArray();
-        int[] testLabels = split.Test.Select(item => item.Label).ToArray();
-
-        var perceptron = new Perceptron(dimension: 2, seed: 42);
-        perceptron.Train(trainInputs, trainLabels, alpha: 0.1, beta: 0.1, maxEpochs: 100);
-
-        int[] predictedTestLabels = testInputs
-            .Select(perceptron.Predict)
-            .ToArray();
-
         var metrics = new EvaluationMetrics();
-        double testAccuracy = metrics.MeasureAccuracy(testLabels, predictedTestLabels);
-
-        Console.WriteLine("=== Podsumowanie eksperymentu ===");
-        Console.WriteLine($"Liczba rekordów po odfiltrowaniu virginica: {dataset.Count}");
-        Console.WriteLine($"Train: {split.Training.Count}");
-        Console.WriteLine($"Test: {split.Test.Count}");
-        Console.WriteLine($"Liczba epok: {perceptron.EpochsCompleted}");
-        Console.WriteLine($"Accuracy testowe: {testAccuracy:P2}");
-        Console.WriteLine();
-
-        Console.WriteLine("=== Accuracy po epokach ===");
-        for (int i = 0; i < perceptron.AccuracyHistory.Count; i++)
-        {
-            Console.WriteLine(
-                $"Epoka {i + 1,2}: accuracy = {perceptron.AccuracyHistory[i]:P2}, błędy = {perceptron.ErrorHistory[i]}");
-        }
-
-        Directory.CreateDirectory(outputDirectory);
-
         var plotter = new SvgPlotter();
 
-        string accuracyPlotPath = Path.Combine(outputDirectory, "accuracy.svg");
-        string decisionBoundaryPath = Path.Combine(outputDirectory, "decision_boundary.svg");
+        
+        var dataset4D = loader.Load(dataPath, 0, 1, 2, 3);
 
-        plotter.ExportAccuracyChart(perceptron.AccuracyHistory, accuracyPlotPath);
+        var split4D = splitter.TrainTestSplit(dataset4D, trainRatio: 0.7, seed: 42);
+
+        double[][] trainInputs4D = split4D.Training
+            .Select(item => item.Features)
+            .ToArray();
+
+        int[] trainLabels4D = split4D.Training
+            .Select(item => item.Label)
+            .ToArray();
+
+        double[][] testInputs4D = split4D.Test
+            .Select(item => item.Features)
+            .ToArray();
+
+        int[] testLabels4D = split4D.Test
+            .Select(item => item.Label)
+            .ToArray();
+
+        var perceptron4D = new Perceptron(dimension: 4, seed: 42);
+        perceptron4D.Train(trainInputs4D, trainLabels4D, alpha: 0.1, beta: 0.1, maxEpochs: 100);
+
+        int[] predictedTestLabels4D = testInputs4D
+            .Select(perceptron4D.Predict)
+            .ToArray();
+
+        double testAccuracy4D = metrics.MeasureAccuracy(testLabels4D, predictedTestLabels4D);
+        
+        var dataset2D = loader.Load(dataPath, 2, 3);
+
+        var split2D = splitter.TrainTestSplit(dataset2D, trainRatio: 0.7, seed: 42);
+
+        double[][] trainInputs2D = split2D.Training
+            .Select(item => item.Features)
+            .ToArray();
+
+        int[] trainLabels2D = split2D.Training
+            .Select(item => item.Label)
+            .ToArray();
+
+        var perceptron2D = new Perceptron(dimension: 2, seed: 42);
+        perceptron2D.Train(trainInputs2D, trainLabels2D, alpha: 0.1, beta: 0.1, maxEpochs: 100);
+        
+        
+        Console.WriteLine("=== Podsumowanie eksperymentu ===");
+        Console.WriteLine($"Liczba rekordów po odfiltrowaniu virginica: {dataset4D.Count}");
+        Console.WriteLine($"Train 4D: {split4D.Training.Count}");
+        Console.WriteLine($"Test 4D: {split4D.Test.Count}");
+        Console.WriteLine($"Liczba epok modelu 4D: {perceptron4D.EpochsCompleted}");
+        Console.WriteLine($"Accuracy testowe modelu 4D: {testAccuracy4D:P2}");
+        Console.WriteLine();
+
+        Console.WriteLine("=== Accuracy modelu 4D po epokach ===");
+        for (int i = 0; i < perceptron4D.AccuracyHistory.Count; i++)
+        {
+            Console.WriteLine(
+                $"Epoka {i + 1,2}: accuracy = {perceptron4D.AccuracyHistory[i]:P2}, błędy = {perceptron4D.ErrorHistory[i]}");
+        }
+        
+        Directory.CreateDirectory(outputDirectory);
+
+        string accuracyPlotPath = Path.Combine(outputDirectory, "accuracy_4d.svg");
+        string decisionBoundaryPath = Path.Combine(outputDirectory, "decision_boundary_2d.svg");
+
+        plotter.ExportAccuracyChart(perceptron4D.AccuracyHistory, accuracyPlotPath);
+
         plotter.ExportDecisionBoundary(
-            split.Test,
-            perceptron.Weights,
-            perceptron.Threshold,
+            split2D.Test,
+            perceptron2D.Weights,
+            perceptron2D.Threshold,
             decisionBoundaryPath,
             "Petal length",
             "Petal width");
@@ -75,7 +100,19 @@ internal static class Program
         Console.WriteLine(decisionBoundaryPath);
         Console.WriteLine();
 
-        var ui = new ConsolePredictionUi(perceptron);
+       
+        var ui = new ConsolePredictionUi(
+            perceptron4D,
+            new[]
+            {
+                "Sepal length",
+                "Sepal width",
+                "Petal length",
+                "Petal width"
+            },
+            positiveClassName: "setosa",
+            negativeClassName: "versicolor");
+
         ui.Run();
     }
 }

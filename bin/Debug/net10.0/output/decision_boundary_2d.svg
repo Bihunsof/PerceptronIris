@@ -1,0 +1,67 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'>
+<rect width='100%' height='100%' fill='white' />
+<text x='450' y='28' text-anchor='middle' font-size='22' font-family='Arial' fill='#111'>Decision Boundary</text>
+<rect x='90' y='50' width='770' height='470' fill='none' stroke='#aaa' />
+<line x1='90' y1='50' x2='90' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='520' x2='860' y2='520' stroke='#eee' stroke-width='1' />
+<text x='90' y='542' text-anchor='middle' font-size='12' fill='#444'>0.4</text>
+<text x='78' y='524' text-anchor='end' font-size='12' fill='#444'>-0.14</text>
+<line x1='244' y1='50' x2='244' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='426' x2='860' y2='426' stroke='#eee' stroke-width='1' />
+<text x='244' y='542' text-anchor='middle' font-size='12' fill='#444'>1.44</text>
+<text x='78' y='430' text-anchor='end' font-size='12' fill='#444'>0.276</text>
+<line x1='398' y1='50' x2='398' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='332' x2='860' y2='332' stroke='#eee' stroke-width='1' />
+<text x='398' y='542' text-anchor='middle' font-size='12' fill='#444'>2.48</text>
+<text x='78' y='336' text-anchor='end' font-size='12' fill='#444'>0.692</text>
+<line x1='552' y1='50' x2='552' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='238' x2='860' y2='238' stroke='#eee' stroke-width='1' />
+<text x='552' y='542' text-anchor='middle' font-size='12' fill='#444'>3.52</text>
+<text x='78' y='242' text-anchor='end' font-size='12' fill='#444'>1.108</text>
+<line x1='706' y1='50' x2='706' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='144' x2='860' y2='144' stroke='#eee' stroke-width='1' />
+<text x='706' y='542' text-anchor='middle' font-size='12' fill='#444'>4.56</text>
+<text x='78' y='148' text-anchor='end' font-size='12' fill='#444'>1.524</text>
+<line x1='860' y1='50' x2='860' y2='520' stroke='#eee' stroke-width='1' />
+<line x1='90' y1='50' x2='860' y2='50' stroke='#eee' stroke-width='1' />
+<text x='860' y='542' text-anchor='middle' font-size='12' fill='#444'>5.6</text>
+<text x='78' y='54' text-anchor='end' font-size='12' fill='#444'>1.94</text>
+<text x='475' y='580' text-anchor='middle' font-size='16' fill='#111'>Petal length</text>
+<text x='28' y='300' text-anchor='middle' font-size='16' fill='#111' transform='rotate(-90 28 300)'>Petal width</text>
+<circle cx='563.846' cy='194.615' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='252.885' cy='397.981' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='697.115' cy='149.423' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='637.885' cy='262.404' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='756.346' cy='149.423' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='267.692' cy='352.788' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='178.846' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='252.885' cy='465.769' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='771.154' cy='104.231' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='637.885' cy='194.615' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='608.269' cy='172.019' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='711.923' cy='194.615' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='312.115' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='312.115' cy='397.981' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='726.731' cy='172.019' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='267.692' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='238.077' cy='420.577' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='578.654' cy='262.404' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='726.731' cy='172.019' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='252.885' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='193.654' cy='465.769' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='652.692' cy='217.212' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='252.885' cy='420.577' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='682.308' cy='172.019' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='756.346' cy='149.423' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='238.077' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='252.885' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='726.731' cy='126.827' r='6' fill='#d62728' fill-opacity='0.85' />
+<circle cx='252.885' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<circle cx='238.077' cy='420.577' r='6' fill='#2ca02c' fill-opacity='0.85' />
+<line x1='90' y1='213.858' x2='860' y2='321.08' stroke='#111' stroke-width='3' />
+<rect x='700' y='70' width='150' height='70' fill='white' stroke='#ccc' />
+<circle cx='718' cy='92' r='6' fill='#2ca02c' />
+<text x='732' y='97' font-size='13' fill='#111'>setosa (1)</text>
+<circle cx='718' cy='118' r='6' fill='#d62728' />
+<text x='732' y='123' font-size='13' fill='#111'>versicolor (0)</text>
+</svg>
