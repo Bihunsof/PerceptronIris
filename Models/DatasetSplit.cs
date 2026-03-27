@@ -1,5 +1,6 @@
 namespace PerceptronIris.Models;
 
-public sealed record DataSetSplit(
+public sealed record DatasetSplit(
     IReadOnlyList<Observation> Training,
-    IReadOnlyList<Observation Test);
+    IReadOnlyList<Observation> Test
+);
