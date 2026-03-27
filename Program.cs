@@ -2,6 +2,7 @@
 using PerceptronIris.Evaluation;
 using PerceptronIris.ML;
 using PerceptronIris.UI;
+using PerceptronIris.Visualization;
 
 namespace PerceptronIris;
 
@@ -10,9 +11,12 @@ internal static class Program
     private static void Main()
     {
         string dataPath = Path.Combine(AppContext.BaseDirectory, "Data", "iris.csv");
+        string outputDirectory = Path.Combine(AppContext.BaseDirectory, "output");
 
         var loader = new IrisCsvLoader();
-        
+
+        // 2 -> petal length
+        // 3 -> petal width
         var dataset = loader.Load(dataPath, 2, 3);
 
         var splitter = new PrepareDataset();
@@ -49,6 +53,26 @@ internal static class Program
                 $"Epoka {i + 1,2}: accuracy = {perceptron.AccuracyHistory[i]:P2}, błędy = {perceptron.ErrorHistory[i]}");
         }
 
+        Directory.CreateDirectory(outputDirectory);
+
+        var plotter = new SvgPlotter();
+
+        string accuracyPlotPath = Path.Combine(outputDirectory, "accuracy.svg");
+        string decisionBoundaryPath = Path.Combine(outputDirectory, "decision_boundary.svg");
+
+        plotter.ExportAccuracyChart(perceptron.AccuracyHistory, accuracyPlotPath);
+        plotter.ExportDecisionBoundary(
+            split.Test,
+            perceptron.Weights,
+            perceptron.Threshold,
+            decisionBoundaryPath,
+            "Petal length",
+            "Petal width");
+
+        Console.WriteLine();
+        Console.WriteLine("Wygenerowane pliki:");
+        Console.WriteLine(accuracyPlotPath);
+        Console.WriteLine(decisionBoundaryPath);
         Console.WriteLine();
 
         var ui = new ConsolePredictionUi(perceptron);
