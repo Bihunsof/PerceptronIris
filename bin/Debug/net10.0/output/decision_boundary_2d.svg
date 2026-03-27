@@ -58,7 +58,7 @@
 <circle cx='726.731' cy='126.827' r='6' fill='#d62728' fill-opacity='0.85' />
 <circle cx='252.885' cy='443.173' r='6' fill='#2ca02c' fill-opacity='0.85' />
 <circle cx='238.077' cy='420.577' r='6' fill='#2ca02c' fill-opacity='0.85' />
-<line x1='90' y1='213.858' x2='860' y2='321.08' stroke='#111' stroke-width='3' />
+<line x1='213.943' y1='520' x2='646.446' y2='50' stroke='#111' stroke-width='3' />
 <rect x='700' y='70' width='150' height='70' fill='white' stroke='#ccc' />
 <circle cx='718' cy='92' r='6' fill='#2ca02c' />
 <text x='732' y='97' font-size='13' fill='#111'>setosa (1)</text>

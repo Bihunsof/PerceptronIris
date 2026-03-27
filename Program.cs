@@ -17,7 +17,6 @@ internal static class Program
         var splitter = new PrepareDataset();
         var metrics = new EvaluationMetrics();
         var plotter = new SvgPlotter();
-
         
         var dataset4D = loader.Load(dataPath, 0, 1, 2, 3);
 
@@ -39,8 +38,12 @@ internal static class Program
             .Select(item => item.Label)
             .ToArray();
 
-        var perceptron4D = new Perceptron(dimension: 4, seed: 42);
-        perceptron4D.Train(trainInputs4D, trainLabels4D, alpha: 0.1, beta: 0.1, maxEpochs: 100);
+        var perceptron4D = new Perceptron(
+            dimension: 4,
+            initialWeights: new[] { 5.0, 5.0, 5.0, 5.0 },
+            initialThreshold: 2.0);
+
+        perceptron4D.Train(trainInputs4D, trainLabels4D, alpha: 0.01, beta: 0.01, maxEpochs: 100);
 
         int[] predictedTestLabels4D = testInputs4D
             .Select(perceptron4D.Predict)
@@ -60,9 +63,12 @@ internal static class Program
             .Select(item => item.Label)
             .ToArray();
 
-        var perceptron2D = new Perceptron(dimension: 2, seed: 42);
-        perceptron2D.Train(trainInputs2D, trainLabels2D, alpha: 0.1, beta: 0.1, maxEpochs: 100);
-        
+        var perceptron2D = new Perceptron(
+            dimension: 2,
+            initialWeights: new[] { 5.0, 5.0 },
+            initialThreshold: 2.0);
+
+        perceptron2D.Train(trainInputs2D, trainLabels2D, alpha: 0.01, beta: 0.01, maxEpochs: 100);
         
         Console.WriteLine("=== Podsumowanie eksperymentu ===");
         Console.WriteLine($"Liczba rekordów po odfiltrowaniu virginica: {dataset4D.Count}");
@@ -99,8 +105,7 @@ internal static class Program
         Console.WriteLine(accuracyPlotPath);
         Console.WriteLine(decisionBoundaryPath);
         Console.WriteLine();
-
-       
+        
         var ui = new ConsolePredictionUi(
             perceptron4D,
             new[]

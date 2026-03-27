@@ -8,29 +8,113 @@
 <text x='78' y='524' text-anchor='end' font-size='12' fill='#444'>0</text>
 <line x1='244' y1='50' x2='244' y2='520' stroke='#eee' stroke-width='1' />
 <line x1='90' y1='426' x2='860' y2='426' stroke='#eee' stroke-width='1' />
-<text x='244' y='542' text-anchor='middle' font-size='12' fill='#444'>1.2</text>
+<text x='244' y='542' text-anchor='middle' font-size='12' fill='#444'>9.6</text>
 <text x='78' y='430' text-anchor='end' font-size='12' fill='#444'>0.2</text>
 <line x1='398' y1='50' x2='398' y2='520' stroke='#eee' stroke-width='1' />
 <line x1='90' y1='332' x2='860' y2='332' stroke='#eee' stroke-width='1' />
-<text x='398' y='542' text-anchor='middle' font-size='12' fill='#444'>1.4</text>
+<text x='398' y='542' text-anchor='middle' font-size='12' fill='#444'>18.2</text>
 <text x='78' y='336' text-anchor='end' font-size='12' fill='#444'>0.4</text>
 <line x1='552' y1='50' x2='552' y2='520' stroke='#eee' stroke-width='1' />
 <line x1='90' y1='238' x2='860' y2='238' stroke='#eee' stroke-width='1' />
-<text x='552' y='542' text-anchor='middle' font-size='12' fill='#444'>1.6</text>
+<text x='552' y='542' text-anchor='middle' font-size='12' fill='#444'>26.8</text>
 <text x='78' y='242' text-anchor='end' font-size='12' fill='#444'>0.6</text>
 <line x1='706' y1='50' x2='706' y2='520' stroke='#eee' stroke-width='1' />
 <line x1='90' y1='144' x2='860' y2='144' stroke='#eee' stroke-width='1' />
-<text x='706' y='542' text-anchor='middle' font-size='12' fill='#444'>1.8</text>
+<text x='706' y='542' text-anchor='middle' font-size='12' fill='#444'>35.4</text>
 <text x='78' y='148' text-anchor='end' font-size='12' fill='#444'>0.8</text>
 <line x1='860' y1='50' x2='860' y2='520' stroke='#eee' stroke-width='1' />
 <line x1='90' y1='50' x2='860' y2='50' stroke='#eee' stroke-width='1' />
-<text x='860' y='542' text-anchor='middle' font-size='12' fill='#444'>2</text>
+<text x='860' y='542' text-anchor='middle' font-size='12' fill='#444'>44</text>
 <text x='78' y='54' text-anchor='end' font-size='12' fill='#444'>1</text>
 <text x='475' y='580' text-anchor='middle' font-size='16' fill='#111'>Epoka</text>
 <text x='28' y='300' text-anchor='middle' font-size='16' fill='#111' transform='rotate(-90 28 300)'>Accuracy</text>
-<polyline fill='none' stroke='#1f77b4' stroke-width='3' points='90,97 860,50' />
-<circle cx='90' cy='97' r='4' fill='#1f77b4' />
-<text x='96' y='89' font-size='11' fill='#333'>90%</text>
+<polyline fill='none' stroke='#1f77b4' stroke-width='3' points='90,285 107.907,285 125.814,291.714 143.721,399.143 161.628,291.714 179.535,211.143 197.442,157.429 215.349,123.857 233.256,110.429 251.163,103.714 269.07,83.571 286.977,83.571 304.884,83.571 322.791,63.429 340.698,70.143 358.605,63.429 376.512,70.143 394.419,63.429 412.326,63.429 430.233,56.714 448.14,63.429 466.047,63.429 483.953,56.714 501.86,63.429 519.767,56.714 537.674,63.429 555.581,56.714 573.488,63.429 591.395,63.429 609.302,56.714 627.209,63.429 645.116,56.714 663.023,63.429 680.93,63.429 698.837,56.714 716.744,63.429 734.651,56.714 752.558,63.429 770.465,63.429 788.372,56.714 806.279,63.429 824.186,56.714 842.093,63.429 860,50' />
+<circle cx='90' cy='285' r='4' fill='#1f77b4' />
+<text x='96' y='277' font-size='11' fill='#333'>50%</text>
+<circle cx='107.907' cy='285' r='4' fill='#1f77b4' />
+<text x='113.907' y='277' font-size='11' fill='#333'>50%</text>
+<circle cx='125.814' cy='291.714' r='4' fill='#1f77b4' />
+<text x='131.814' y='283.714' font-size='11' fill='#333'>48.571%</text>
+<circle cx='143.721' cy='399.143' r='4' fill='#1f77b4' />
+<text x='149.721' y='391.143' font-size='11' fill='#333'>25.714%</text>
+<circle cx='161.628' cy='291.714' r='4' fill='#1f77b4' />
+<text x='167.628' y='283.714' font-size='11' fill='#333'>48.571%</text>
+<circle cx='179.535' cy='211.143' r='4' fill='#1f77b4' />
+<text x='185.535' y='203.143' font-size='11' fill='#333'>65.714%</text>
+<circle cx='197.442' cy='157.429' r='4' fill='#1f77b4' />
+<text x='203.442' y='149.429' font-size='11' fill='#333'>77.143%</text>
+<circle cx='215.349' cy='123.857' r='4' fill='#1f77b4' />
+<text x='221.349' y='115.857' font-size='11' fill='#333'>84.286%</text>
+<circle cx='233.256' cy='110.429' r='4' fill='#1f77b4' />
+<text x='239.256' y='102.429' font-size='11' fill='#333'>87.143%</text>
+<circle cx='251.163' cy='103.714' r='4' fill='#1f77b4' />
+<text x='257.163' y='95.714' font-size='11' fill='#333'>88.571%</text>
+<circle cx='269.07' cy='83.571' r='4' fill='#1f77b4' />
+<text x='275.07' y='75.571' font-size='11' fill='#333'>92.857%</text>
+<circle cx='286.977' cy='83.571' r='4' fill='#1f77b4' />
+<text x='292.977' y='75.571' font-size='11' fill='#333'>92.857%</text>
+<circle cx='304.884' cy='83.571' r='4' fill='#1f77b4' />
+<text x='310.884' y='75.571' font-size='11' fill='#333'>92.857%</text>
+<circle cx='322.791' cy='63.429' r='4' fill='#1f77b4' />
+<text x='328.791' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='340.698' cy='70.143' r='4' fill='#1f77b4' />
+<text x='346.698' y='62.143' font-size='11' fill='#333'>95.714%</text>
+<circle cx='358.605' cy='63.429' r='4' fill='#1f77b4' />
+<text x='364.605' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='376.512' cy='70.143' r='4' fill='#1f77b4' />
+<text x='382.512' y='62.143' font-size='11' fill='#333'>95.714%</text>
+<circle cx='394.419' cy='63.429' r='4' fill='#1f77b4' />
+<text x='400.419' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='412.326' cy='63.429' r='4' fill='#1f77b4' />
+<text x='418.326' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='430.233' cy='56.714' r='4' fill='#1f77b4' />
+<text x='436.233' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='448.14' cy='63.429' r='4' fill='#1f77b4' />
+<text x='454.14' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='466.047' cy='63.429' r='4' fill='#1f77b4' />
+<text x='472.047' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='483.953' cy='56.714' r='4' fill='#1f77b4' />
+<text x='489.953' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='501.86' cy='63.429' r='4' fill='#1f77b4' />
+<text x='507.86' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='519.767' cy='56.714' r='4' fill='#1f77b4' />
+<text x='525.767' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='537.674' cy='63.429' r='4' fill='#1f77b4' />
+<text x='543.674' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='555.581' cy='56.714' r='4' fill='#1f77b4' />
+<text x='561.581' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='573.488' cy='63.429' r='4' fill='#1f77b4' />
+<text x='579.488' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='591.395' cy='63.429' r='4' fill='#1f77b4' />
+<text x='597.395' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='609.302' cy='56.714' r='4' fill='#1f77b4' />
+<text x='615.302' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='627.209' cy='63.429' r='4' fill='#1f77b4' />
+<text x='633.209' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='645.116' cy='56.714' r='4' fill='#1f77b4' />
+<text x='651.116' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='663.023' cy='63.429' r='4' fill='#1f77b4' />
+<text x='669.023' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='680.93' cy='63.429' r='4' fill='#1f77b4' />
+<text x='686.93' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='698.837' cy='56.714' r='4' fill='#1f77b4' />
+<text x='704.837' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='716.744' cy='63.429' r='4' fill='#1f77b4' />
+<text x='722.744' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='734.651' cy='56.714' r='4' fill='#1f77b4' />
+<text x='740.651' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='752.558' cy='63.429' r='4' fill='#1f77b4' />
+<text x='758.558' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='770.465' cy='63.429' r='4' fill='#1f77b4' />
+<text x='776.465' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='788.372' cy='56.714' r='4' fill='#1f77b4' />
+<text x='794.372' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='806.279' cy='63.429' r='4' fill='#1f77b4' />
+<text x='812.279' y='55.429' font-size='11' fill='#333'>97.143%</text>
+<circle cx='824.186' cy='56.714' r='4' fill='#1f77b4' />
+<text x='830.186' y='48.714' font-size='11' fill='#333'>98.571%</text>
+<circle cx='842.093' cy='63.429' r='4' fill='#1f77b4' />
+<text x='848.093' y='55.429' font-size='11' fill='#333'>97.143%</text>
 <circle cx='860' cy='50' r='4' fill='#1f77b4' />
 <text x='866' y='42' font-size='11' fill='#333'>100%</text>
 </svg>

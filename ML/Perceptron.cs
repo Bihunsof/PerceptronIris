@@ -14,7 +14,11 @@ public sealed class Perceptron
     public List<double> AccuracyHistory { get; } = new();
     public List<int> ErrorHistory { get; } = new();
 
-    public Perceptron(int dimension, int seed = 42)
+    public Perceptron(
+        int dimension,
+        int seed = 42,
+        double[]? initialWeights = null,
+        double? initialThreshold = null)
     {
         if (dimension <= 0)
             throw new ArgumentOutOfRangeException(nameof(dimension), "Dimension musi być > 0.");
@@ -23,12 +27,25 @@ public sealed class Perceptron
         Weights = new double[dimension];
         _random = new Random(seed);
 
-        for (int i = 0; i < dimension; i++)
+        if (initialWeights != null)
         {
-            Weights[i] = _random.NextDouble() - 0.5;
+            if (initialWeights.Length != dimension)
+                throw new ArgumentException("Liczba wag początkowych musi być zgodna z dimension.", nameof(initialWeights));
+
+            for (int i = 0; i < dimension; i++)
+            {
+                Weights[i] = initialWeights[i];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < dimension; i++)
+            {
+                Weights[i] = _random.NextDouble() - 0.5;
+            }
         }
 
-        Threshold = _random.NextDouble() - 0.5;
+        Threshold = initialThreshold ?? (_random.NextDouble() - 0.5);
     }
 
     public void Train(double[][] inputs, int[] labels, double alpha, double beta, int maxEpochs = 1000)
@@ -132,20 +149,5 @@ public sealed class Perceptron
             if (vector.Length != Dimension)
                 throw new ArgumentException("Każdy wektor wejściowy musi mieć wymiar zgodny z perceptronem.");
         }
-    }
-
-    private double CalculateAccuracy(double[][] inputs, int[] labels)
-    {
-        int correct = 0;
-
-        for (int i = 0; i < inputs.Length; i++)
-        {
-            if (Predict(inputs[i]) == labels[i])
-            {
-                correct++;
-            }
-        }
-
-        return correct / (double)inputs.Length;
     }
 }
