@@ -28,7 +28,7 @@ public sealed class EvaluationMetrics
 
         return correct / (double)realClasses.Count;
     }
-    
+
     public double measureAccuracy(IReadOnlyList<int> realClasses, IReadOnlyList<int> predictedClasses)
     {
         return MeasureAccuracy(realClasses, predictedClasses);
